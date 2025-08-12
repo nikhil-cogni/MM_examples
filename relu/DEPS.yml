@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+my_target:
+    deps:
+      my_file.sv
+=======
+bench_relu:
+  deps:
+    - relu/relu.sv
+    - relu/tb_relu.sv
+  top: tb_relu
+>>>>>>> new-content
