@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+
+=======
+# Alternative synthesis script with minimal ABC usage
+
+# Read the design
+read_verilog -sv relu/relu.sv
+
+# Basic synthesis
+hierarchy -check -top relu
+proc; opt; 
+fsm; opt; 
+memory; opt
+
+# Flatten design
+flatten
+
+# Map to internal cells first
+techmap; opt
+
+# Try ABC with simplified library
+abc -liberty ../simple_cells.lib
+
+# Cleanup
+clean
+
+# Generate netlist
+write_verilog relu/relu_abc.v
+
+# Print statistics
+stat
+
+# Show schematic
+show -format dot -prefix relu/relu_abc -colors 2
+>>>>>>> new-content

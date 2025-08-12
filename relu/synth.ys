@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+
+=======
+# Yosys synthesis script for ReLU design
+
+# Read the design
+read_verilog -sv relu/relu.sv
+
+# Generic synthesis
+synth -top relu
+
+# Basic technology mapping
+abc -liberty mycells.lib
+
+# Generate netlist
+write_verilog relu/relu_synth.v
+
+# Print statistics
+stat
+
+# Show schematic representation (optional)
+show -format dot -prefix relu/relu_synth -colors 2
+>>>>>>> new-content

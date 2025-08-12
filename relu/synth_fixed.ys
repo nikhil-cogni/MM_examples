@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+
+=======
+# Modified Yosys synthesis script for ReLU design that skips problematic ABC steps
+
+# Read the design
+read_verilog -sv relu/relu.sv
+
+# Generic synthesis - use a simpler flow without external ABC
+synth -top relu
+
+# Map to internal Yosys cells (avoiding abc liberty mapping which is causing the error)
+techmap
+
+# Optimize the design
+opt
+
+# Clean up
+clean
+
+# Generate netlist
+write_verilog relu/relu_synth.v
+
+# Print statistics
+stat
+
+# Show schematic representation (optional)
+show -format dot -prefix relu/relu_synth -colors 2
+>>>>>>> new-content
