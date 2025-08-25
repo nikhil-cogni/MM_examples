@@ -2,7 +2,7 @@
 Repo containing examples created using ModuleMaker
 
 ### RELU Example
-![RELU}()
+![RELU](relu/relu.svg)
 ### Byte Stream Adder
 ![Image](byte_stream_adder/BSA.png)
 ### Generic HW Accelerator
