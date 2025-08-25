@@ -1,0 +1,10 @@
+bench_ppm_generator:
+  deps:
+    - ppm_generator.sv
+    - ppm_generator_tb.sv
+  top: ppm_generator_tb
+
+synth_ppm_generator:
+  deps:
+    - ppm_generator.sv
+  top: ppm_generator
